@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ShopNow.EntityFrameworkCore;
 
@@ -11,9 +12,11 @@ using ShopNow.EntityFrameworkCore;
 namespace ShopNow.Migrations
 {
     [DbContext(typeof(ShopNowDbContext))]
-    partial class ShopNowDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250202153512_migrationOfsixtables")]
+    partial class migrationOfsixtables
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -1853,7 +1856,13 @@ namespace ShopNow.Migrations
                     b.Property<Guid?>("StoreId")
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<Guid?>("SubCatId")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<Guid?>("SubCategoryId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid?>("SubSubCatId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<Guid?>("SubSubCategoryId")

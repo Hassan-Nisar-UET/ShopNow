@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ShopNow.EntityFrameworkCore;
 
@@ -11,9 +12,11 @@ using ShopNow.EntityFrameworkCore;
 namespace ShopNow.Migrations
 {
     [DbContext(typeof(ShopNowDbContext))]
-    partial class ShopNowDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250202191131_RenameForeignKeys")]
+    partial class RenameForeignKeys
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
